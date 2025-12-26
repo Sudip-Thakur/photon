@@ -1,0 +1,33 @@
+# PyQt5 for GUI
+PyQt5>=5.15.0
+PyQt5-tools>=5.15.0
+
+# PyTorch and related
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Computer Vision
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# Scientific Computing
+numpy>=1.24.0
+matplotlib>=3.7.0
+scipy>=1.10.0
+
+# Image Processing
+scikit-image>=0.20.0
+imageio>=2.31.0
+
+# Utilities
+tqdm>=4.65.0
+PyYAML>=6.0
+psutil>=5.9.0
+
+# Video processing (for camera and video file support)
+av>=10.0.0
+
+# Additional utilities
+python-dateutil>=2.8.0
+packaging>=23.0
