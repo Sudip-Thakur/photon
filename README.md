@@ -7,15 +7,11 @@ Photon is a ecosystem that converts a grayscale video into a colorful video in r
   <tr>
     <td align="center">
       <p><strong>Captured</strong></p>
-      <video width="320" autoplay loop muted playsinline>
-        <source src="./captures/Captured.mp4" type="video/mp4">
-      </video>
+      <img src="./captures/Captured.gif" width="320">
     </td>
     <td align="center">
       <p><strong>Processed</strong></p>
-      <video width="320" autoplay loop muted playsinline>
-        <source src="./captures/Processed.mp4" type="video/mp4">
-      </video>
+      <img src="./captures/Processed.gif" width="320">
     </td>
   </tr>
 </table>
