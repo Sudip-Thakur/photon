@@ -3,7 +3,7 @@ Photon is a ecosystem that converts a grayscale video into a colorful video in r
 
 ## Preview
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
       <p><strong>Captured</strong></p>
@@ -22,14 +22,20 @@ The processing of the grayscale video to make it colorful is done in real-time. 
 
 The active illumination is done using Infrared LEDs which produce invisible infrared led that is captured by the Infrared Camera. There are two parts to properly powering such LEDs. Voltage regulator simply regulates a constant voltage and the current draw is dependent upon the load. Therefore to safely operate a diode which has exponential IV curve needs a current regulation given by following circuit.
 <p align="center">
-    <img src="./hardware/Schematic.png" alt="Image 1" width="90%"/>
+    <img src="./hardware/Schematic.png" alt="Image 1" width="65%"/>
 </p>
 
 This current limiter was soldered and realized to illuminate our video captures. Similarly even the Infrared camera we used is simply a pi camera whose IR filter was removed by us.
 
 <p align="center">
-    <img src="./hardware/photos/Photo 1.jpg" alt="Image 1" width="90%"/>
+    <img src="./hardware/photos/Photo 1.jpg" alt="Image 1" width="65%"/>
 </p>
 
+The video frames captured by the camera was transmitted to the processing computer with UDP protocol to ensure the lowest latency and responsiveness in the system. UDP ensures that even if the packet gets lost, the connection doesn't suffer.
+
+  ```
+  rpicam-vid -t 0 --width 640 --height 480 --framerate 30 --codec h264 --nopreview --inline --profile baseline --intra 15 --flush 1 -o udp://<IP Reciever>:<Port>?pkt_size=1316
+  ```
+This command was used to transfer the video frames in real time in low resolution to ensure that low bandwidth communication would suffice for real time communication.
 
 
